@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
-
-router.get("/", (req, res) => {
-  res.send("Hello World duy anh!");
-});
-router.get("/abc", (req, res) => {
+const { getHompage, getABC } = require("../controllers/homeController");
+router.get("/", getHompage);
+router.get("/abc", getABC);
+router.get("/gaixinh", (req, res) => {
   res.render("sample.ejs");
 });
 
