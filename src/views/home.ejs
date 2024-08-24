@@ -51,20 +51,18 @@
             <td><%= user.email %></td>
             <td><%= user.name %></td>
             <td><%= user.city %></td>
-            <td>
+            <td style="display: flex; align-items: center">
               <button type="button" class="btn btn-primary">
                 <a style="color: aliceblue" href="/update-user/<%= user.id %>">
                   Edit</a
                 >
               </button>
 
-              <button
-                type="button"
-                class="btn btn-dark"
-                onclick="handleDelete()"
-              >
-                Delete
-              </button>
+              <form method="post" action="/delete-user/<%= user.id %>">
+                <button class="btn btn-dark" style="margin-left: 10px">
+                  Delete
+                </button>
+              </form>
             </td>
           </tr>
           <% }); %>

@@ -39,3 +39,9 @@ body {
     padding           : 15px;
     border-radius     : 5px;
 }
+
+.modal-content {
+    position: relative;
+
+    top: 60px;
+}
