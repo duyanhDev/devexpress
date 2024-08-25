@@ -7,8 +7,6 @@ const app = express();
 const port = process.env.PORT || 8088;
 const hostname = process.env.HOST_NAME;
 
-const kitten = require("./models/Kitten");
-
 // test connetion
 
 //seft  running arrouw functiton
@@ -22,9 +20,6 @@ app.use("/", webRoutes);
 app.get("/admin", (req, res) => {
   res.send("hello word");
 });
-
-const cat = new kitten({ name: "Model duy anh" });
-cat.save();
 
 (async () => {
   try {
