@@ -83,7 +83,7 @@ const postDeteleUser = async (req, res) => {
     const id = req.params.id;
     console.log("Check ID:", id);
 
-    // Tìm tài liệu người dùng theo id
+    // Tìm tài liệu người dùng theo id  SELECT * FROM USERS WHERR ID = ID
     const user = await User.findById(id);
 
     if (!user) {
@@ -101,7 +101,8 @@ const postDeteleUser = async (req, res) => {
 const postHandleRemove = async (req, res) => {
   let { id } = req.body;
   let results = await User.findByIdAndDelete(id);
-  console.log(results);
+
+  console.log(">>", results);
 
   res.redirect("/");
 };
