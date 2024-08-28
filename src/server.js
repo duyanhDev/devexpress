@@ -3,6 +3,7 @@ const express = require("express");
 const configViewEngine = require("./config/viewEngine");
 const connection = require("../src/config/database");
 const webRoutes = require("./routes/web");
+const routerAPI = require("./routes/api");
 const app = express();
 const port = process.env.PORT || 8088;
 const hostname = process.env.HOST_NAME;
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 configViewEngine(app);
 // // config static file
 app.use("/", webRoutes);
+app.use("/v1/api/", routerAPI);
 app.get("/admin", (req, res) => {
   res.send("hello word");
 });
