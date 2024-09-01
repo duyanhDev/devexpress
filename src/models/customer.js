@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 // create data
 const customerSchema = new Schema(
   {
-    name: { type: String, require: true },
+    name: { type: String, required: true },
     adress: String,
     phone: String,
     email: String,

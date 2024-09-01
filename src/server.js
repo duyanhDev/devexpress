@@ -4,9 +4,12 @@ const configViewEngine = require("./config/viewEngine");
 const connection = require("../src/config/database");
 const webRoutes = require("./routes/web");
 const routerAPI = require("./routes/api");
+const fileUpload = require("express-fileupload");
 const app = express();
 const port = process.env.PORT || 8088;
 const hostname = process.env.HOST_NAME;
+
+// config file
 
 // test connetion
 
@@ -14,6 +17,7 @@ const hostname = process.env.HOST_NAME;
 
 // config req.body
 app.use(express.json()); // for json
+app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 configViewEngine(app);
 // // config static file
